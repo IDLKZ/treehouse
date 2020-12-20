@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Admin\MarkerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::resource('/marker', MarkerController::class);
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
