@@ -20,10 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        "role_id",
+        "phone",
+        "verified",
     ];
 
     protected $attributes = [
-        'role_id' => 1,
+        'role_id' => 2,
         'phone' => '87002350806',
     ];
     /**
