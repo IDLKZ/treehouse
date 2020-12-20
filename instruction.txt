@@ -1,0 +1,1 @@
+php artisan migrate --path=/database/migrations/2020_12_20_081519_create_roles_table.php
