@@ -1,1 +1,8 @@
 php artisan migrate --path=/database/migrations/2020_12_20_081519_create_roles_table.php
+var fg = L.featureGroup();
+            mymap.eachLayer((layer)=>{
+                if(layer instanceof L.Path || layer instanceof L.Marker){
+                    fg.addLayer(layer);
+                }
+            });
+            const data = fg.toGeoJSON();
