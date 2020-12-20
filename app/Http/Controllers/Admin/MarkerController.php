@@ -50,7 +50,9 @@ class MarkerController extends Controller
      */
     public function show($id)
     {
-        //
+        $marker = Marker::find($id);
+        $TIMA = (json_decode($marker->geo))->features[0]->geometry->coordinates;
+        return view('admin.marker.show', compact('marker', 'TIMA'));
     }
 
     /**
