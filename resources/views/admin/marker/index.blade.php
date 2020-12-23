@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <style>
         .plus {
             position: absolute;
