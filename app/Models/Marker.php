@@ -31,6 +31,10 @@ class Marker extends Model
             ]
         ];
     }
+
+    protected $casts = [
+        'geo' => 'json'
+    ];
     use HasFactory;
     protected $fillable = ['title', 'description', 'img', 'geo', 'alias'];
 

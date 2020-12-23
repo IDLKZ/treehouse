@@ -15,8 +15,19 @@ class MarkerController extends Controller
      */
     public function index()
     {
-        $markers = Marker::paginate(10);
-        return view('admin.marker.index', compact('markers'));
+        $markers = Marker::all();
+        $addressPoints = [];
+        foreach ($markers as $marker) {
+            foreach (json_decode($marker->geo, 1)['features'] as $feature) {
+                $addressPoints[] = [
+                    $feature['geometry']['coordinates'][0],
+                    $feature['geometry']['coordinates'][1],
+                    $marker->title
+                ];
+            }
+        }
+        $addressPoints = json_encode($addressPoints);
+        return view('admin.marker.index', compact('markers', 'addressPoints'));
     }
 
     /**

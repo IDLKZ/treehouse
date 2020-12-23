@@ -59,9 +59,9 @@
 @endsection
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
-            integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
-            crossorigin=""></script>
+{{--    <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"--}}
+{{--            integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="--}}
+{{--            crossorigin=""></script>--}}
     <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
 
     <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
@@ -72,12 +72,10 @@
 
 
 
-        var map = L.map('map').setView([<?=$TIMA[1]?>, <?=$TIMA[0]?>], 17);
-        L.esri.basemapLayer('Imagery').addTo(map);
-        L.esri.basemapLayer('ImageryLabels').addTo(map);
-        // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        // }).addTo(map);
+        var map = L.map('map').setView([<?=$TIMA[1]?>, <?=$TIMA[0]?>], 14);
+        // L.esri.basemapLayer('Imagery').addTo(map);
+        // L.esri.basemapLayer('ImageryLabels').addTo(map);
+        L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
         // FeatureGroup is to store editable layers
         map.pm.addControls({
             position: 'topleft',

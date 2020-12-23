@@ -47,9 +47,8 @@
         var map = L.map('map').setView([47.6808461, 70.5520044], 5);
         // L.esri.basemapLayer('Imagery').addTo(map);
         // L.esri.basemapLayer('ImageryLabels').addTo(map);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+
+        L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
         // FeatureGroup is to store editable layers
         var drawnItems = new L.FeatureGroup();
         map.addLayer(drawnItems);
