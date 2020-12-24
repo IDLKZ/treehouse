@@ -56,7 +56,7 @@
 
         var map = L.map('map').setView([47.6808461, 70.5520044], 5);
         L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
-        var markers = L.markerClusterGroup({ chunkedLoading: true });
+        var markers = L.markerClusterGroup({ chunkedLoading: true, });
 
         for (var i = 0; i < addressPoints[0].length; i++) {
             var a = addressPoints[0][i];
