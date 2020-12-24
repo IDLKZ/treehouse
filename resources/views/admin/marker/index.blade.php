@@ -10,10 +10,13 @@
             font-size: 24px;
             font-weight: 700;
         }
-        #map {
-            width: 100%;
-            height: 450px;
+        .card-img-top {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
         }
+        .leaflet-popup-content {width: auto;}
+        .card {width: 200px!important;}
     </style>
 @endpush
 
@@ -53,7 +56,6 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
         var addressPoints = [<?=$addressPoints?>]
-
         var map = L.map('map').setView([47.6808461, 70.5520044], 5);
         L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
         var markers = L.markerClusterGroup({ chunkedLoading: true, });

@@ -14,7 +14,13 @@ class Marker extends Model
     // assuming `users` table has 'cover', 'avatar' columns
     // mark all the columns as image fields
     protected static $imageFields = [
-        'img'
+        'img' => [
+            // what disk you want to upload, default config('imageup.upload_disk')
+            'disk' => 'local',
+
+            // a folder path on the above disk, default config('imageup.upload_directory')
+            'path' => 'uploads',
+        ]
     ];
     use Sluggable;
 
@@ -37,6 +43,10 @@ class Marker extends Model
 //    ];
     use HasFactory;
     protected $fillable = ['title', 'description', 'img', 'geo', 'alias'];
+    public function polygon()
+    {
+        return $this->hasOne(Polygon::class, 'marker_id', 'id');
+    }
 
     public function add($request)
     {

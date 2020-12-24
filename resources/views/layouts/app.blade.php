@@ -21,6 +21,12 @@
     <link href="{{ asset('css/leaflet.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{{asset('js/leaflet.js')}}"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 450px;
+        }
+    </style>
     @stack('styles')
 </head>
 <body>
@@ -32,7 +38,9 @@
         </main>
     </div>
 
-
 @stack('scripts')
+    <script>
+        L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
+    </script>
 </body>
 </html>

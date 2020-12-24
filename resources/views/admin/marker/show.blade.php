@@ -12,10 +12,6 @@
             font-weight: 700;
             z-index: 2000;
         }
-        #map {
-            width: 100%;
-            height: 450px;
-        }
     </style>
 @endpush
 
@@ -67,15 +63,8 @@
     <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
 
     <script>
+        var map = L.map('map').setView([47.6808461, 70.5520044], 5);
 
-
-
-
-
-        var map = L.map('map').setView([<?=$TIMA[1]?>, <?=$TIMA[0]?>], 14);
-        // L.esri.basemapLayer('Imagery').addTo(map);
-        // L.esri.basemapLayer('ImageryLabels').addTo(map);
-        L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
         // FeatureGroup is to store editable layers
         map.pm.addControls({
             position: 'topleft',

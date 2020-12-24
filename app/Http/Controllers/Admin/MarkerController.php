@@ -17,8 +17,9 @@ class MarkerController extends Controller
     {
         $markers = Marker::all();
         $addressPoints = [];
-        foreach ($markers as $marker) {
 
+        foreach ($markers as $marker) {
+            $link = $marker->polygon ? route('polygon.show', $marker->polygon->id) : route('marker.show', $marker->id);
             foreach (json_decode($marker->geo, 1)['features'] as $feature) {
                 $addressPoints[] = [
                     $feature['geometry']['coordinates'][0],
@@ -29,7 +30,7 @@ class MarkerController extends Controller
                       <div class='card-body'>
                         <h5 class='card-title'>$marker->title</h5>
                         <p class='card-text'>$marker->description</p>
-                        <a href='' class='btn btn-primary'>Посадить лес тут</a>
+                        <a href='$link' class='btn btn-primary btn-sm text-white'>Посмотреть участок</a>
                                     </div>
                     </div>
                     "

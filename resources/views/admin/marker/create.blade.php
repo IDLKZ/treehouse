@@ -2,10 +2,7 @@
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
     <style>
-        #map {
-            width: 100%;
-            height: 450px;
-        }
+
     </style>
 @endpush
 
@@ -43,12 +40,7 @@
     <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'description' );
-
         var map = L.map('map').setView([47.6808461, 70.5520044], 5);
-        // L.esri.basemapLayer('Imagery').addTo(map);
-        // L.esri.basemapLayer('ImageryLabels').addTo(map);
-
-        L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
         // FeatureGroup is to store editable layers
         var drawnItems = new L.FeatureGroup();
         map.addLayer(drawnItems);

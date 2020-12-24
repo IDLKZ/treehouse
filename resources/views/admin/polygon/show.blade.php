@@ -12,10 +12,7 @@
             font-weight: 700;
             z-index: 2000;
         }
-        #map {
-            width: 100%;
-            height: 450px;
-        }
+
     </style>
 @endpush
 
@@ -46,16 +43,8 @@
 
     <script>
 
-
-
-
-
         var map = L.map('map').setView([<?=$TIMA[1]?>, <?=$TIMA[0]?>], 17);
-        L.esri.basemapLayer('Imagery').addTo(map);
-        L.esri.basemapLayer('ImageryLabels').addTo(map);
-        // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        // }).addTo(map);
+
         // FeatureGroup is to store editable layers
         map.pm.addControls({
             position: 'topleft',
@@ -69,7 +58,7 @@
             editMode:false,
             drawMarker:false,
             drawRectangle:false,
-
+            removalMode: false
         });
          map.pm.setLang('ru');
 
