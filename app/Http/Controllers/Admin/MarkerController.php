@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\BindClass;
 use App\Models\Marker;
 use Illuminate\Http\Request;
 
@@ -15,29 +16,7 @@ class MarkerController extends Controller
      */
     public function index()
     {
-        $markers = Marker::all();
-        $addressPoints = [];
-
-        foreach ($markers as $marker) {
-            $link = $marker->polygon ? route('polygon.show', $marker->polygon->id) : route('marker.show', $marker->id);
-            foreach (json_decode($marker->geo, 1)['features'] as $feature) {
-                $addressPoints[] = [
-                    $feature['geometry']['coordinates'][0],
-                    $feature['geometry']['coordinates'][1],
-                    "
-                    <div class='card' style='width: 18rem;'>
-                      <img src='/$marker->img' class='card-img-top' alt='$marker->title'>
-                      <div class='card-body'>
-                        <h5 class='card-title'>$marker->title</h5>
-                        <p class='card-text'>$marker->description</p>
-                        <a href='$link' class='btn btn-primary btn-sm text-white'>Посмотреть участок</a>
-                                    </div>
-                    </div>
-                    "
-                ];
-            }
-        }
-        $addressPoints = json_encode($addressPoints);
+        $addressPoints = BindClass::addressPoints();
         return view('admin.marker.index', compact('markers', 'addressPoints'));
     }
 

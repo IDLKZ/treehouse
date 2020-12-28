@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\MarkerController;
 use App\Http\Controllers\Admin\PolygonController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,9 @@ use App\Http\Controllers\Admin\PolygonController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', ['App\Http\Controllers\FrontController', 'index']);
+Route::get('/plantations', [FrontController::class, 'plantation'])->name('plantation');
+Route::get('/plantation/{id}', [FrontController::class, 'show'])->name('plantation.show');
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
