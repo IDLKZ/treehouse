@@ -8,12 +8,12 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="hero-area-slide">
                         <div class="hero-area-single-slide">
-                            <h1>Aquaponic House</h1>
+                            <h1>Жасыл ел</h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled make type specimen book.</p>
                             <a href="#" class="aquaponic-btn">Learn More</a>
                         </div>
                         <div class="hero-area-single-slide">
-                            <h1>Aquaponic House</h1>
+                            <h1>Zhasyl el</h1>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled make type specimen book.</p>
                             <a href="#" class="aquaponic-btn">Learn More</a>
                         </div>

@@ -7373,7 +7373,7 @@ body {
     line-height: 25px;
     font-size: 14px;
     color: #313131;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
@@ -7387,7 +7387,7 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
 }
 h1,
 h2,
@@ -7571,7 +7571,7 @@ textarea:focus {
     background: transparent;
 }
 .read-more {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     display: inline-block;
 }
@@ -7597,7 +7597,7 @@ textarea:focus {
 	cursor: pointer;
 	transition: all 0.4s;
     font-size: 16px;
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
 }
 .aquaponic-btn:hover {
     background: transparent;
@@ -7692,7 +7692,7 @@ header.header-area {
     background: #3f7d20;
     color: #fff;
     font-size: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 header.header-area a {
     color: #fff;
@@ -7802,7 +7802,7 @@ a.aquaponic-cart:hover span {
 ---------------------------------------*/
 .menubar {
     background: #59a934;
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
 }
 .menubar .logo {
     padding: 7px 0;
@@ -9382,7 +9382,7 @@ blockquote a {
     margin: 40px 0 10px;
 }
 .four04 h1 , .four04 h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .four04 h1 {
     font-size: 36px;
